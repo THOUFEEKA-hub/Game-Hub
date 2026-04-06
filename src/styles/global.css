@@ -30,8 +30,6 @@
   --radius-md: 16px;
   --radius-sm: 12px;
   --content-width: 1440px;
-  --page-padding: 16px;
-  --section-gap: 24px;
 }
 
 .theme-light {
@@ -62,7 +60,6 @@
 
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -94,15 +91,8 @@ select {
   font: inherit;
 }
 
-input,
-select,
-textarea {
-  max-width: 100%;
-}
-
 button {
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -114,44 +104,3 @@ img {
   min-height: 100vh;
 }
 
-@media (max-width: 768px) {
-  :root {
-    --radius-xl: 22px;
-    --radius-lg: 18px;
-    --radius-md: 14px;
-    --page-padding: 12px;
-    --section-gap: 18px;
-  }
-
-  body {
-    background:
-      radial-gradient(circle at top left, rgba(151, 117, 250, 0.12), transparent 24%),
-      radial-gradient(circle at top right, rgba(110, 231, 168, 0.1), transparent 20%),
-      linear-gradient(180deg, #08090b 0%, var(--bg) 12%, var(--bg) 100%);
-  }
-
-  body.theme-light {
-    background:
-      radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 22%),
-      radial-gradient(circle at top right, rgba(134, 239, 172, 0.12), transparent 18%),
-      linear-gradient(180deg, #edf2ff 0%, var(--bg) 14%, var(--bg) 100%);
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    --page-padding: 10px;
-    --section-gap: 14px;
-  }
-
-  body {
-    min-width: 0;
-  }
-
-  button,
-  input,
-  select,
-  textarea {
-    font-size: 16px;
-  }
-}
