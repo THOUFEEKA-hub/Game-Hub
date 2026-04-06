@@ -1,0 +1,210 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  margin-bottom: 34px;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius-xl) + 8px);
+  background: var(--bg-elevated);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-md);
+}
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-size: 1.3rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-width: max-content;
+}
+
+.brandMark {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(139, 92, 246, 0.2);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.brandSubtitle {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.searchSlot {
+  flex: 1;
+  min-width: 240px;
+  transition:
+    max-height 220ms ease,
+    opacity 180ms ease,
+    transform 220ms ease;
+}
+
+.themeToggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.toggleTrack {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border);
+  transition: background-color 180ms ease;
+}
+
+.toggleTrackActive {
+  background: linear-gradient(135deg, #9ae6b4 0%, #6ee7a8 100%);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 180ms ease;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.toggleThumbActive {
+  transform: translateX(23px);
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 18px;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+  }
+
+  .themeToggle {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    position: relative;
+    top: auto;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    margin-bottom: 22px;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .brand {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .brandMark {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .brandText {
+    display: flex;
+    min-width: 0;
+  }
+
+  .brandTitle {
+    font-size: 0.9rem;
+  }
+
+  .brandSubtitle {
+    display: none;
+  }
+
+  .themeToggle {
+    grid-column: 3;
+    grid-row: 1;
+    width: auto;
+    margin-left: 0;
+    justify-self: end;
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  .themeToggle span:last-child {
+    display: none;
+  }
+
+  .toggleTrack {
+    width: 52px;
+    height: 30px;
+  }
+
+  .toggleThumb {
+    width: 22px;
+    height: 22px;
+  }
+
+  .toggleThumbActive {
+    transform: translateX(21px);
+  }
+
+  .searchSlot {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+    width: 100%;
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    overflow: visible;
+  }
+
+}

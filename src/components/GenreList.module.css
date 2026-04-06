@@ -1,0 +1,220 @@
+.panel {
+  padding: 8px 0;
+  display: grid;
+  gap: 14px;
+}
+
+.title {
+  margin: 0 0 22px;
+  font-size: clamp(1.8rem, 2vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.section {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.sectionToggle {
+  width: 100%;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  background: transparent;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sectionIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.chevron {
+  color: var(--text-muted);
+  transition: transform 180ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.sectionBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+}
+
+.sectionBodyOpen {
+  max-height: 1200px;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  padding: 0 12px 14px;
+}
+
+.simpleList {
+  display: grid;
+  gap: 8px;
+  padding: 0 12px 14px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border: 0;
+  width: 100%;
+  border-radius: 16px;
+  color: var(--text-secondary);
+  background: transparent;
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.simpleItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--text-secondary);
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.item:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+}
+
+.simpleItem:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+}
+
+.active {
+  color: var(--text-primary);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(110, 231, 168, 0.08));
+}
+
+.thumb {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.simpleItemIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.status {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+@media (min-width: 1201px) {
+  .sectionBody {
+    max-height: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .panel {
+    gap: 12px;
+  }
+
+  .title {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
+    gap: 10px;
+  }
+
+  .section {
+    border-radius: 18px;
+  }
+
+  .sectionToggle {
+    padding: 14px 16px;
+  }
+
+  .sectionLabel {
+    font-size: 0.96rem;
+  }
+
+  .sectionIcon,
+  .simpleItemIcon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .thumb {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .item,
+  .simpleItem {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .name {
+    font-size: 0.95rem;
+  }
+}
